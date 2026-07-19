@@ -1,0 +1,366 @@
+/* Reset & Base */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    background: #f0f2f5;
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navigation */
+.navbar {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 16px 0;
+    box-shadow: 0 2px 12px rgba(102, 126, 234, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 24px;
+}
+
+.nav-links a {
+    color: rgba(255,255,255,0.9);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.3s;
+    padding: 4px 0;
+    border-bottom: 2px solid transparent;
+}
+
+.nav-links a:hover {
+    color: #fff;
+    border-bottom-color: #fff;
+}
+
+/* Main */
+main {
+    flex: 1;
+    padding: 30px 0 50px;
+}
+
+/* Game Header (Title + CTA above game) */
+.game-header {
+    text-align: center;
+    padding: 30px 0 20px;
+}
+
+.game-header h1 {
+    font-size: 2rem;
+    color: #2d3436;
+    margin-bottom: 20px;
+    line-height: 1.3;
+}
+
+/* Game Wrapper */
+.game-wrapper {
+    margin-bottom: 40px;
+}
+
+.game-container {
+    position: relative;
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    background: #000;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+}
+
+.game-container iframe {
+    display: block;
+    width: 100%;
+    height: 600px;
+    border: none;
+}
+
+.game-placeholder {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: opacity 0.3s;
+}
+
+.game-placeholder:hover {
+    opacity: 0.9;
+}
+
+.play-button {
+    width: 90px;
+    height: 90px;
+    background: rgba(255,255,255,0.15);
+    border: 3px solid rgba(255,255,255,0.6);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.8rem;
+    color: #fff;
+    backdrop-filter: blur(4px);
+    transition: transform 0.3s, background 0.3s;
+    margin-bottom: 16px;
+}
+
+.game-placeholder:hover .play-button {
+    transform: scale(1.1);
+    background: rgba(255,255,255,0.25);
+}
+
+.play-hint {
+    color: rgba(255,255,255,0.8);
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+}
+
+/* CTA Button */
+.cta-container {
+    text-align: center;
+    margin: 24px 0 32px;
+}
+
+.cta-button {
+    display: inline-block;
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 700;
+    padding: 16px 48px;
+    border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 6px 24px rgba(245, 87, 108, 0.35);
+    transition: transform 0.3s, box-shadow 0.3s;
+    letter-spacing: 2px;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 32px rgba(245, 87, 108, 0.5);
+}
+
+.cta-button:active {
+    transform: translateY(0);
+}
+
+/* Content Section */
+.content-section {
+    max-width: 860px;
+    margin: 0 auto 40px;
+    background: #fff;
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+}
+
+.content-section h1 {
+    font-size: 2rem;
+    color: #2d3436;
+    margin-bottom: 0;
+    text-align: center;
+    line-height: 1.3;
+}
+
+.content-section h2 {
+    font-size: 1.4rem;
+    color: #6c5ce7;
+    margin: 32px 0 16px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #eef0f5;
+}
+
+.content-section p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 16px;
+    text-indent: 2em;
+    text-align: justify;
+}
+
+/* FAQ Section */
+.faq-section {
+    max-width: 860px;
+    margin: 0 auto 40px;
+    background: #fff;
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+}
+
+.faq-section h2 {
+    font-size: 1.4rem;
+    color: #6c5ce7;
+    margin-bottom: 24px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #eef0f5;
+}
+
+.faq-item {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.faq-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.faq-item h3 {
+    font-size: 1.05rem;
+    color: #2d3436;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.faq-item p {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.7;
+}
+
+/* Footer */
+footer {
+    background: #2d3436;
+    color: rgba(255,255,255,0.7);
+    padding: 30px 0;
+    margin-top: auto;
+}
+
+.footer-content {
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.footer-content p {
+    margin-bottom: 8px;
+}
+
+.footer-links a {
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    margin: 0 6px;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #fff;
+}
+
+.footer-note {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.5);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 12px;
+    }
+    
+    .navbar {
+        padding: 12px 0;
+    }
+    
+    .logo {
+        font-size: 1.2rem;
+    }
+    
+    .nav-links {
+        gap: 14px;
+    }
+    
+    .nav-links a {
+        font-size: 0.85rem;
+    }
+    
+    .game-container iframe {
+        height: 400px;
+    }
+    
+    .play-button {
+        width: 70px;
+        height: 70px;
+        font-size: 2.2rem;
+    }
+    
+    .play-hint {
+        font-size: 0.95rem;
+    }
+    
+    .content-section,
+    .faq-section {
+        padding: 24px 16px;
+        border-radius: 12px;
+    }
+    
+    .content-section h1 {
+        font-size: 1.5rem;
+    }
+    
+    .content-section h2,
+    .faq-section h2 {
+        font-size: 1.2rem;
+    }
+    
+    .cta-button {
+        font-size: 1rem;
+        padding: 14px 32px;
+    }
+}
+
+@media (max-width: 480px) {
+    .game-container iframe {
+        height: 300px;
+    }
+    
+    .content-section h1 {
+        font-size: 1.3rem;
+    }
+    
+    .content-section p {
+        font-size: 0.9rem;
+    }
+}
